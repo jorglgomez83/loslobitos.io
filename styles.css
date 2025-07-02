@@ -1,0 +1,267 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #d1e7f9;
+}
+
+
+/* NAVBAR */
+nav {
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+.menu-horizontal {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+.menu-horizontal > li {
+    position: relative;
+}
+
+.menu-horizontal a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.menu-vertical {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    padding: 0;
+    z-index: 999;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+/* Toggle móvil */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 1rem;
+    color: white;
+}
+.ubicacion-cancha {
+    background-color: #0e85bd; /* Verde oscuro deportivo */
+    color: #0c0000; /* Texto blanco */
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 2px solid #3666f6; /* Borde decorativo */
+    border-bottom: 2px solid #3666f6;
+}
+
+.ubicacion-cancha p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-horizontal {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu-horizontal {
+        display: flex;
+    }
+
+    .menu-horizontal li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-horizontal li:hover .menu-vertical {
+        position: static;
+    }
+}
+
+/* BANNER */
+.banner {
+    width: 100vw; /* 100% del ancho de la ventana */
+    height: 300px;
+    background: url('img/banner_jc.jpg') center center no-repeat;
+    background-size: cover; /* llena todo el espacio, aunque recorte un poco */
+    margin: 0;
+    padding: 0;
+}
+/* TÍTULOS DE SECCIÓN */
+section h2 {
+    text-align: center;
+    position: relative;
+    margin: 2rem 0 1rem;
+    font-size: 2rem;
+    color: #222;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #00bfff; /* celeste */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* GALERÍAS */
+.galeria-partidos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.galeria-partidos .item {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+.galeria-partidos img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit:contain;
+    object-position: top;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-partidos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+ p {
+  font-weight: bold;           /* Negrita */
+  font-size: 1.1rem;           /* Tamaño ligeramente mayor */
+  color: #004d66;              /* Un azul oscuro o color destacado */
+  margin-bottom: 10px;          /* Espacio con la imagen */
+  text-align: center;          /* Centrado si prefieres */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente legible y moderna */
+  text-transform: uppercase;   /* Opcional: pone el texto en mayúsculas */
+  letter-spacing: 1px;         /* Espaciado entre letras */
+}
+/* FORMULARIO */
+.formulario {
+    background-color: #e0f7ff;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario input[type="submit"] {
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: #009edb;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 1rem 0.5rem;
+    text-align: center;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-footer {
+    flex: 1 1 150px;
+}
+
+.icon-footer img {
+    max-width: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.copryrigth {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* FOOTER RESPONSIVE */
+@media (max-width: 600px) {
+    .footer-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* RESPONSIVE PARA GALERÍA EN MÓVILES */
+@media (max-width: 600px) {
+    .galeria-partidos img {
+        height: 250px;
+    }
+}
